@@ -5,7 +5,7 @@ import articlesRoutes from "./routes/articles";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-
+const PORT = process.env.PORT || 8080;
 dotenv.config();
 // connecting database
 mongoose
@@ -19,7 +19,7 @@ mongoose
     app.use("/auth", authRoutes);
     app.use("/subs", subsRoutes);
     app.use("/articles", articlesRoutes);
-    app.listen(8080, () => {
+    app.listen(PORT, () => {
       console.log(`Now listening to port 8080`);
     });
   })
